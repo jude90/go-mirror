@@ -14,5 +14,4 @@ RUN mkdir -p $GOPATH/src/github.com/cosmos && \
    cd sdk-application-tutorial && \
    make get_tools && \
    make get_vendor_deps && \
-   make install && \
-   make build
+   make install 
