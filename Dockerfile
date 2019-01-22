@@ -10,8 +10,11 @@ RUN apt-get update && \
 
 RUN mkdir -p $GOPATH/src/github.com/cosmos && \
    cd $GOPATH/src/github.com/cosmos && \
-   git clone https://github.com/cosmos/sdk-application-tutorial.git && \
-   cd sdk-application-tutorial && \
-   make get_tools && \
+   git clone https://github.com/cosmos/cosmos-sdk.git && \
+   cd cosmos-sdk && \
+   make tools && \
    make get_vendor_deps && \
-   make install 
+   make build && \
+   make install && \
+   make install_examples && \ 
+   make install_cosmos-sdk-cli
