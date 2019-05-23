@@ -9,6 +9,6 @@ ENV GO111MODULE on
 RUN mkdir -p  $GOPATH/src/github.com/ipfs/ && \
     cd  $GOPATH/src/github.com/ipfs/ && \
     git clone https://github.com/ipfs/ipfs-cluster && \
-    make docker_install
+    make install
 
 WORKDIR $SRC_PATH
