@@ -1,0 +1,14 @@
+
+FROM golang:1.12-stretch
+
+
+ENV GOPATH     /go
+ENV SRC_PATH   $GOPATH/src/github.com/ipfs/ipfs-cluster
+ENV GO111MODULE on
+
+RUN mkdir -p  $GOPATH/src/github.com/ipfs/ && \
+    cd  $GOPATH/src/github.com/ipfs/ && \
+    git clone https://github.com/ipfs/ipfs-cluster && \
+    make docker_install
+
+WORKDIR $SRC_PATH
