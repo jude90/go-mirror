@@ -8,7 +8,8 @@ ENV GO111MODULE on
 
 RUN mkdir -p  $GOPATH/src/github.com/ipfs/ && \
     cd  $GOPATH/src/github.com/ipfs/ && \
-    git clone https://github.com/ipfs/ipfs-cluster && \
+    git clone https://github.com/ipfs/ipfs-cluster && \ 
+    cd $SRC_PATH && \
     make install
 
 WORKDIR $SRC_PATH
