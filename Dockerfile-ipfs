@@ -3,12 +3,12 @@ FROM golang
 
 
 ENV GOPATH     /go
-ENV SRC_PATH   $GOPATH/src/github.com/ipfs/ipfs-cluster
+ENV SRC_PATH   $GOPATH/src/github.com/ipfs/go-ipfs
 ENV GO111MODULE on
 
 RUN mkdir -p  $GOPATH/src/github.com/ipfs/ && \
     cd  $GOPATH/src/github.com/ipfs/ && \
-    git clone https://github.com/ipfs/ipfs-cluster && \ 
+    git clone https://github.com/ipfs/go-ipfs && \ 
     cd $SRC_PATH && \
     make install
 
